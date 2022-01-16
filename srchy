@@ -1,0 +1,1790 @@
+<!DOCTYPE html >
+<html lang="en">
+  <head>
+    <title>Readings Snapshot | Srchy</title>
+    <meta charset="utf-8"/>
+    <link rel="shortcut icon" href="https://srchy.ai/favicon.ico"/>
+    <style>*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+ul[class],
+ol[class] {
+  list-style: none;
+}
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 16px;
+  color: #4a4a4a;
+}
+.page {
+  width: 640px;
+  margin: 1em auto 2em;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: #fff;
+}
+.header {
+  width: 640px;
+  margin: 1em auto 0;
+}
+.header p {
+  font-size: 10px;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding: 0 1rem;
+}
+a {
+  text-decoration: none;
+}
+a:focus {
+  outline-offset: 5px;
+  outline: 1px dotted #00bdff;
+}
+.page thead th {
+  padding: 1em;
+  font-size: 14px;
+  font-weight: normal;
+  border-bottom: 2px solid #def;
+}
+h4 {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 1.5em;
+}
+h6 {
+  font-size: 12px;
+  font-weight: normal;
+  text-align: center;
+  color: #0e5dc8;
+  margin: 0 0 1rem 0;
+}
+a[rel='external'] {
+  text-decoration: none;
+  color: #329ffe;
+}
+.clearfix::before,
+.clearfix::after {
+  content: ' ';
+  display: table;
+}
+.clearfix::after {
+  clear: both;
+}
+.tdata {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+hr {
+  width: 100%;
+  height: 0;
+  margin: 0 0 2em;
+  background-color: transparent;
+  border: 0;
+  border-top: 1px solid #def;
+  border-bottom: 1px solid #def;
+}
+#bodyTable {
+  height: 100% !important;
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+  background-color: #def;
+}
+.title {
+  background-color: #fff;
+}
+.title h1 {
+  font-size: 44px;
+  text-align: center;
+  margin: 0;
+}
+.title h1 span {
+  position: relative;
+}
+.title h2 {
+  font-size: 21px;
+  text-align: center;
+  color: #0e5dc8;
+  margin: 5rem 0 0;
+}
+.title h3 {
+  margin: 0 0 5rem;
+  font-size: 14px;
+  font-weight: normal;
+  color: #999;
+  text-align: center;
+}
+.title .prev-period {
+  text-transform: uppercase;
+  margin-top: 2rem;
+  font-size: 10px;
+  font-weight: bold;
+  color: #999;
+}
+.title .prev-period span {
+  color: #4a4a4a;
+}
+.period {
+  display: inline-table;
+}
+.period .date {
+  width: 64px;
+  height: 64px;
+  border-radius: 6px;
+  border: 1px dotted #ccc;
+  box-shadow: 0 25px 50px -12px #000;
+}
+.period span.month {
+  display: block;
+  width: 100%;
+  height: 24px;
+  border-radius: 6px 6px 0 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.75;
+  color: #fff;
+  background-color: #de4637;
+}
+.period span.day {
+  display: block;
+  height: 40px;
+  font-size: 2em;
+  line-height: 1.25;
+  text-align: center;
+  color: #4a4a4a;
+}
+.period span[arrow] {
+  font-size: 32px;
+  margin: 0 1em;
+  color: #4a4a4a;
+}
+.search-performance {
+  width: 100%;
+  padding: 1.5rem 0;
+  background-color: #329ffe;
+}
+.search-performance h4 {
+  color: #fff;
+}
+.search-performance table {
+  width: 92%;
+  margin: 0 auto;
+}
+.search-performance h5 {
+  color: #329ffe;
+  text-align: center;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0 0 0.5em 0;
+}
+.search-performance .current {
+  text-align: center;
+  font-size: 20px;
+}
+.search-performance .delta {
+  text-align: center;
+  margin: 0.875rem 0 0;
+}
+.search-performance .arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin: 0 0.25em 0 0;
+  vertical-align: 2px;
+  border-style: solid;
+}
+.search-performance .arrow.up {
+  border-width: 0 6px 8px 6px;
+  border-color: transparent transparent #43c077 transparent;
+}
+.search-performance .arrow.dn {
+  border-width: 8px 6px 0 6px;
+  border-color: #f7624e transparent transparent transparent;
+}
+.search-performance .delta-value {
+  font-size: 16px;
+  color: #0e5dc8;
+}
+.search-performance .arrow.up + .delta-value {
+  color: #43c077;
+}
+.search-performance .arrow.dn + .delta-value {
+  color: #f7624e;
+}
+.search-performance .prev {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  margin: 1rem 0 0;
+}
+.search-performance span[prev-label] {
+  margin: 0 0.375em 0 0;
+  padding: 0.125em 0.5em;
+  border-radius: 2px;
+  font-size: 9px;
+  color: #fff;
+  background-color: #999;
+}
+.search-performance .datum {
+  padding: 0;
+  border-spacing: 2px;
+  border-collapse: separate;
+}
+.search-performance .click-thru-rate {
+  position: relative;
+  top: -3px;
+  width: 91.5%;
+  background-color: #fff;
+}
+.search-performance .graph-container {
+  float: left;
+  width: 49%;
+  padding: 0;
+  height: 100px;
+  margin: 0.25rem 0 0 0;
+  color: #4a4a4a;
+}
+.search-performance .graph-container.prev {
+  float: right;
+  color: #4a4a4a;
+}
+.search-performance .graph-container table {
+  width: 100%;
+  margin: 0;
+  font-size: 10px;
+}
+.search-performance .metric {
+  border-spacing: 2px;
+  border-collapse: separate;
+  padding: 0.5em 1em;
+}
+.search-performance .bar {
+  border-radius: 3px 3px 0 0;
+}
+.search-performance .legend {
+  width: 100%;
+  height: 90px;
+  border-radius: 3px;
+  border: 1px dotted #ccc;
+  font-size: 11px;
+  padding: 1.375rem 0.75rem;
+}
+.search-performance .legend .legend-item {
+  display: block;
+}
+.search-performance .legend em {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.375em;
+  border-radius: 2px;
+}
+.search-performance .buy-now {
+  background-color: #fccff3;
+}
+.search-performance .view-product {
+  background-color: #988eff;
+}
+.search-performance .other {
+  background-color: #6e3ff4;
+}
+.facet-summary {
+  background-color: #6e3ff4;
+}
+.prev-legend {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 4px;
+  border-radius: 2px;
+  background-color: #4fc573;
+}
+.cur-legend {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 4px;
+  border-radius: 2px;
+  background-color: #25b3e5;
+}
+.barchart {
+  position: relative;
+  width: 100%;
+  height: 244px;
+}
+.barchart-inner {
+  position: relative;
+  margin: 0 auto;
+  width: 96%;
+  height: 100%;
+}
+.barchart-table {
+  margin: 0;
+}
+.barchart-y-label {
+  text-align: right;
+  padding-right: 0.5em;
+}
+.barchart-area {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px dotted #ccc;
+  border-left: 1px dotted #ccc;
+  background-size: auto auto;
+  background-image: repeating-linear-gradient(0deg, #fff, #fff 12.5%, #f8f8f8 12.5%, #f8f8f8 25%);
+}
+.barchart-day-prev {
+  border-radius: 3px 3px 0 0;
+  background-color: #4fc573;
+}
+.barchart-day-cur {
+  border-radius: 3px 3px 0 0;
+  background-color: #25b3e5;
+}
+.query-report {
+  width: 92%;
+  margin: 0 auto;
+  padding: 2em 0;
+  background-color: #fff;
+  border-top: 2px solid #def;
+}
+.query-report h4 {
+  color: #329ffe;
+}
+.query-report table {
+  width: 92%;
+  margin: 0 auto;
+  font-size: 11px;
+  border-collapse: collapse;
+}
+.query-report .top-10 td {
+  padding: 0.375em 0.125em 0.25em;
+}
+.query-report .top-10 thead td {
+  color: #0e5dc8;
+  border-top: 1px dotted #0e5dc8;
+  border-bottom: 1px dotted #0e5dc8;
+}
+.query-report .top-10 tbody td {
+  border-top: 1px dotted #ccc;
+}
+.query-report .tag-cloud {
+  height: 260px;
+  width: 96%;
+  border: 1px dotted transparent;
+}
+.query-report .tag-cloud .words {
+  height: calc(100% - 3em);
+  margin: 1em 0.5em 0;
+  justify-content: center;
+  align-content: center;
+  align-items: baseline;
+  text-align: center;
+}
+.more {
+  padding: 2rem 0;
+  color: #fff;
+  background-color: #333;
+}
+.more p {
+  text-align: center;
+}
+.more a {
+  color: #00bdff;
+  text-decoration: none;
+}
+.footer {
+  padding: 2rem 0;
+  color: #fff;
+  background-color: #0e5dc8;
+}
+.footer a {
+  display: block;
+  width: 32px;
+  margin: 0 auto;
+  text-decoration: none;
+}
+.footer img {
+  width: 100%;
+}
+.footer p {
+  font-size: 11px;
+  text-align: center;
+  margin: 0.5rem 0 0;
+}
+.footer strong {
+  padding: 0 1.5rem;
+}
+.footer {
+  padding: 2rem 0;
+  color: #fff;
+  background-color: #0e5dc8;
+}
+.footer a {
+  display: block;
+  width: 32px;
+  margin: 0 auto;
+}
+.footer img {
+  width: 100%;
+}
+.footer p {
+  font-size: 11px;
+  text-align: center;
+  margin: 0.5rem 0 0;
+}
+</style>
+  </head>
+  <body>
+    <table id="bodyTable">
+      <tr>
+        <td width="100%">
+          <table class="header">
+            <thead>
+              <tr>
+                <th width="50%" align="left" valign="middle">
+                  <p>Private &amp; confidential</p>
+                </th></th>
+                <th width="50%" align="right" valign="middle">
+                  <p>Can't view?&nbsp;<a rel="external" href="https://prod.readings.srchy.ai/admin?period=7" title="View online">View online</a></p>
+                </th>
+              </tr>
+            </thead>
+          </table>
+          <table class="page">
+            <thead>
+              <tr>
+                <th width="50%" align="left" valign="middle"><a rel="external" href="https://prod.readings.srchy.ai/admin" title="Srchy dashboard"><img src="https://srchy.ai/assets/srchy-logo-141x53.png" width="70.5px" height="26.5px" alt="Srchy"/></a></th>
+                <th width="50%" align="right" valign="middle">Had enough?&nbsp;<a rel="external" href="#">Unsubscribe</a></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="title" colspan="2">
+                  <h2>Readings</h2>
+                  <h1><span>Daily Snapshot Report</span></h1>
+                  <h3><span>For last 7 days</span><br/>
+                    <table class="period">
+                      <tr>
+                        <td width="70px">
+                          <div class="date"><span class="month">JAN</span><span class="day">07</span></div>
+                        </td>
+                        <td valign="center" width="100px"><span arrow="">&rarr;</span></td>
+                        <td width="70px">
+                          <div class="date"><span class="month">JAN</span><span class="day">13</span></div>
+                        </td>
+                      </tr>
+                    </table>
+                    <p class="prev-period">Previous Period&nbsp;<span>31 DEC → 06 JAN</span></p>
+                  </h3>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <table class="search-performance">
+                    <thead>
+                      <tr>
+                        <td class="datum">
+                          <h4>Search Performance</h4>
+                        </td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="datum">
+                          <table>
+                            <tr>
+                              <td width="25%" bgcolor="#ffffff">
+                                <div class="metric">
+                                  <h5>Total searches</h5>
+                                  <div class="current">40,943</div>
+                                  <div class="delta"><span class="arrow dn"></span><span class="delta-value">-1.47%</span>
+                                  </div>
+                                  <div class="prev"><span prev-label="">Prev</span><span>41,555</span></div>
+                                </div>
+                              </td>
+                              <td width="25%" bgcolor="#ffffff">
+                                <div class="metric">
+                                  <h5>Search add to cart</h5>
+                                  <div class="current"> 3,711</div>
+                                  <div class="delta"><span class="arrow up"></span><span class="delta-value"> 1.12%</span>
+                                  </div>
+                                  <div class="prev"><span prev-label="">Prev</span><span> 3,670</span></div>
+                                </div>
+                              </td>
+                              <td width="25%" bgcolor="#ffffff">
+                                <div class="metric">
+                                  <h5>Search value</h5>
+                                  <div class="current">$111,685</div>
+                                  <div class="delta"><span class="arrow up"></span><span class="delta-value">2.60%</span>
+                                  </div>
+                                  <div class="prev"><span prev-label="">Prev</span><span>$108,857</span></div>
+                                </div>
+                              </td>
+                              <td width="25%" bgcolor="#ffffff">
+                                <div class="metric">
+                                  <h5>Unique customers</h5>
+                                  <div class="current">48,343</div>
+                                  <div class="delta"><span class="arrow up"></span><span class="delta-value">4.08%</span>
+                                  </div>
+                                  <div class="prev"><span prev-label="">Prev</span><span>46,449</span></div>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="datum">
+                          <table class="click-thru-rate" cellborder="2">
+                            <tr>
+                              <td width="25%">
+                                <div class="metric">
+                                  <h5>Click Thru Rate</h5>
+                                  <div class="current">44.0%</div>
+                                  <div class="delta"><span class="arrow up"></span><span class="delta-value">2.33%</span>
+                                  </div>
+                                  <div class="prev"><span prev-label="">Prev</span><span>43.0%</span></div>
+                                </div>
+                              </td>
+                              <td colspan="2" valign="top">
+                                <div class="metric">
+                                  <h5>Breakdown</h5>
+                                  <div class="graph-container current">
+                                    <table height="100%">
+                                      <tr>
+                                        <td width="33%" valign="bottom">
+                                          <div>9%</div>
+                                          <div class="bar buy-now" style="height: 9%;"></div>
+                                        </td>
+                                        <td width="33%" valign="bottom">
+                                          <div>87%</div>
+                                          <div class="bar view-product" style="height: 87%;"></div>
+                                        </td>
+                                        <td width="33%" valign="bottom">
+                                          <div>4%</div>
+                                          <div class="bar other" style="height: 4%;"></div>
+                                        </td>
+                                      </tr>
+                                      <tr height="14px">
+                                        <td colspan="3" align="center">CURRENT</td>
+                                      </tr>
+                                    </table>
+                                  </div>
+                                  <div class="graph-container prev">
+                                    <table height="100%">
+                                      <tr>
+                                        <td width="33%" valign="bottom">
+                                          <div>9%</div>
+                                          <div class="bar buy-now" style="height: 9%;"></div>
+                                        </td>
+                                        <td width="33%" valign="bottom">
+                                          <div>87%</div>
+                                          <div class="bar view-product" style="height: 87%;"></div>
+                                        </td>
+                                        <td width="33%" valign="bottom">
+                                          <div>4%</div>
+                                          <div class="bar other" style="height: 4%;"></div>
+                                        </td>
+                                      </tr>
+                                      <tr height="14px">
+                                        <td colspan="3" align="center">PREVIOUS</td>
+                                      </tr>
+                                    </table>
+                                  </div><br class="clearfix"/>
+                                </div>
+                              </td>
+                              <td width="25%" valign="top">
+                                <div class="metric">
+                                  <h5>Legend</h5>
+                                  <div class="legend"><span class="legend-item"><em class="buy-now"></em><span>Buy now</span></span><span class="legend-item"><em class="view-product"></em><span>View product</span></span><span class="legend-item"><em class="other"></em><span>Other</span></span></div>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <td class="query-report" colspan="2">
+                <h4>Search Query Report</h4>
+                <table> 
+                  <tr>
+                    <td width="50%" valign="top">
+                      <h6>Trending Terms</h6>
+                      <div class="tag-cloud">
+    <div class="words">
+      
+      <span class="tag" style="font-size: 14px; font-style: normal; color: #EC407A;">
+        harry potter
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        it ends with us
+      </span>
+    
+      <span class="tag" style="font-size: 14px; font-style: normal; color: #EC407A;">
+        hanya yanagihara
+      </span>
+    
+      <span class="tag" style="font-size: 14px; font-style: normal; color: #EC407A;">
+        moleskine
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        brene brown
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        hanya
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        gifts
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        2022 diary
+      </span>
+    
+      <span class="tag" style="font-size: 10px; font-style: italic; color: #F57C00;">
+        moleskin
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        a little life
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        bell hooks
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        colleen hoover
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        station eleven
+      </span>
+    
+      <span class="tag" style="font-size: 22px; font-style: italic; color: #0e5dc8;">
+        to paradise
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        diary 2022
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        photography
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        poems
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        graphic novel
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        jigsaw puzzles
+      </span>
+    
+      <span class="tag" style="font-size: 14px; font-style: normal; color: #EC407A;">
+        diary
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        it ends with us colleen hoover
+      </span>
+    
+      <span class="tag" style="font-size: 18px; font-style: normal; color: #988eff;">
+        vinyl
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        ann patchett
+      </span>
+    
+      <span class="tag" style="font-size: 14px; font-style: normal; color: #EC407A;">
+        lotte hellinga, wytze hellinga
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        atomic habits
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        romance
+      </span>
+    
+      <span class="tag" style="font-size: 14px; font-style: normal; color: #EC407A;">
+        dune
+      </span>
+    
+      <span class="tag" style="font-size: 10px; font-style: italic; color: #F57C00;">
+        helen garner
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        puzzle
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        art books
+      </span>
+    
+      <span class="tag" style="font-size: 16px; font-style: italic; color: #43c077;">
+        calendar
+      </span>
+    
+      <span class="tag" style="font-size: 10px; font-style: italic; color: #F57C00;">
+        notebook
+      </span>
+    
+      <span class="tag" style="font-size: 14px; font-style: normal; color: #EC407A;">
+        joan didion
+      </span>
+    
+      <span class="tag" style="font-size: 10px; font-style: italic; color: #F57C00;">
+        manga
+      </span>
+    
+      <span class="tag" style="font-size: 12px; font-style: normal; color: #00BCD4;">
+        calendar 2022
+      </span>
+    
+    </div>
+  </div>
+                    </td>
+                    <td width="50%" valign="top">
+                      <h6>Top 10 Terms</h6>
+                      <table class="top-10"> 
+                        <thead> 
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata">Term </div>
+                            </td>
+                            <td align="center" width="20%">Searches </td>
+                            <td width="10%" align="center" style="color: white;">-</td>
+                            <td align="center" width="20%">Conv</td>
+                          </tr>
+                        </thead>
+                        <tbody> 
+                          <tr> 
+                            <td align="left">to paradise</td>
+                            <td align="center" width="20%">149</td>
+                            <td width="10%" align="center" style="color: white;">-</td>
+                            <td align="right" width="20%">06.71%</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">vinyl</td>
+                            <td align="center" width="20%">108</td>
+                            <td width="10%" align="center" style="color: white;">-</td>
+                            <td align="right" width="20%">02.78%</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">calendar</td>
+                            <td align="center" width="20%">86</td>
+                            <td width="10%" align="center" style="color: white;">-</td>
+                            <td align="right" width="20%">04.65%</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">dune</td>
+                            <td align="center" width="20%">74</td>
+                            <td width="10%" align="center" style="color: white;">-</td>
+                            <td align="right" width="20%">13.51%</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">joan didion</td>
+                            <td align="center" width="20%">69</td>
+                            <td width="10%" align="center" style="color: white;">-</td>
+                            <td align="right" width="20%">15.94%</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">lotte hellinga, wytze hellinga</td>
+                            <td align="center" width="20%">69</td>
+                            <td width="10%" align="center" style="color: white;">-</td>
+                            <td align="right" width="20%">01.45%</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">diary</td>
+                            <td align="center" width="20%">68</td>
+                            <td width="10%" align="center" style="color: white;">-</td>
+                            <td align="right" width="20%">02.94%</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">moleskine</td>
+                            <td align="center" width="20%">62</td>
+                            <td width="10%" align="center" style="color: white;">-</td>
+                            <td align="right" width="20%">01.61%</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">hanya yanagihara</td>
+                            <td align="center" width="20%">59</td>
+                            <td width="10%" align="center" style="color: white;">-</td>
+                            <td align="right" width="20%">13.56%</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">harry potter</td>
+                            <td align="center" width="20%">56</td>
+                            <td width="10%" align="center" style="color: white;">-</td>
+                            <td align="right" width="20%">00.00%</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="50%" valign="top">
+                      <h6 style="margin-top: 1.5rem;">Zero Search Queries </h6>
+                      <table class="top-10"> 
+                        <thead> 
+                          <tr> 
+                            <td align="left">Term </td>
+                            <td align="center" width="20%">Searches</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata">my first english italiano learning library la mia prima biblioteca delle parole inglese boxset 10 italian board books</div>
+                            </td>
+                            <td align="center" width="20%">6</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata">workout log book exercise notebook fitness journal personal training weight lifting cardio gym planner men women old school style cover</div>
+                            </td>
+                            <td align="center" width="20%">6</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata">grimmish</div>
+                            </td>
+                            <td align="center" width="20%">4</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata">school zone big preschool workbook ages 3-5 colors shapes numbers 1-10 alphabet pre writing reading phonics more</div>
+                            </td>
+                            <td align="center" width="20%">4</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata">tatty teddy me you photo finish calendar 2022 special gift teen adult mini plannerjanuary december official squared calendrier12 months bonus 4 2021</div>
+                            </td>
+                            <td align="center" width="20%">4</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata">1000 places see before you die picture day 2022 monthly deluxe wall calendar travel photography world without leaving home</div>
+                            </td>
+                            <td align="center" width="20%">3</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata">1pack egg cracker topper ashero stainless steel opener eggshell cutter kitchen remover tool raw soft hard boiled</div>
+                            </td>
+                            <td align="center" width="20%">3</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata">basics bitcoins blockchains introduction cryptocurrencies technology powers them cryptography crypto trading digital assets nft</div>
+                            </td>
+                            <td align="center" width="20%">3</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata">dexter series jeff lindsay collection 8 books set dead final cut double delicious design dark dearly devoted darkly dreaming</div>
+                            </td>
+                            <td align="center" width="20%">3</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata">diana gabaldon outlander series 8 books collection set dragonfly amber voyager drums autumn fiery cross breath snow ashes echo bone written my own hearts blood</div>
+                            </td>
+                            <td align="center" width="20%">3</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <td width="50%" valign="top">
+                      <h6 style="margin-top: 1.5rem;">Popular Products</h6>
+                      <table class="top-10"> 
+                        <thead> 
+                          <tr> 
+                            <td align="left">Product </td>
+                            <td align="center" width="20%">Searches</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata"><strong>To Paradise</strong> by Hanya Yanagihara</div>
+                            </td>
+                            <td align="center" width="20%">131</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata"><strong>To Paradise</strong> by Hanya Yanagihara</div>
+                            </td>
+                            <td align="center" width="20%">60</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata"><strong>It Ends With Us</strong> by Colleen Hoover</div>
+                            </td>
+                            <td align="center" width="20%">53</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata"><strong>The Seven Husbands of Evelyn Hugo</strong> by Taylor Jenkins Reid</div>
+                            </td>
+                            <td align="center" width="20%">33</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata"><strong>The Year of Magical Thinking</strong> by Joan Didion</div>
+                            </td>
+                            <td align="center" width="20%">33</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata"><strong>Station Eleven</strong> by Emily St. John Mandel</div>
+                            </td>
+                            <td align="center" width="20%">30</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata"><strong>A Little Life</strong> by Hanya Yanagihara</div>
+                            </td>
+                            <td align="center" width="20%">30</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata"><strong>Atomic Habits</strong> by James Clear</div>
+                            </td>
+                            <td align="center" width="20%">25</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata"><strong>Margaret Olley 2022 Calendar</strong> by Margaret Olley</div>
+                            </td>
+                            <td align="center" width="20%">22</td>
+                          </tr>
+                          <tr> 
+                            <td align="left">
+                              <div class="tdata"><strong>Dune</strong> by Frank Herbert</div>
+                            </td>
+                            <td align="center" width="20%">22</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <tr>
+                <td colspan="2">
+                  <table class="search-performance facet-summary">
+                    <thead>
+                      <tr>
+                        <td>
+                          <h4>Facet Summary</h4>
+                        </td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <table>
+                            <tr>
+                              <td width="25%" bgcolor="#ffffff">
+                                <div class="metric">
+                                  <h5>Srch w/Facets</h5>
+                                  <div class="current">714</div>
+                                  <div class="delta"><span class="arrow dn"></span><span class="delta-value">-27.81%</span>
+                                  </div>
+                                  <div class="prev"><span prev-label="">Prev</span><span>989</span></div>
+                                </div>
+                              </td>
+                              <td width="25%" bgcolor="#ffffff">
+                                <div class="metric">
+                                  <h5>Srch no Facets</h5>
+                                  <div class="current">37,437</div>
+                                  <div class="delta"><span class="arrow dn"></span><span class="delta-value">-1.04%</span>
+                                  </div>
+                                  <div class="prev"><span prev-label="">Prev</span><span>37,830</span></div>
+                                </div>
+                              </td>
+                              <td width="25%" bgcolor="#ffffff">
+                                <div class="metric">
+                                  <h5>Add2Cart w/Facets</h5>
+                                  <div class="current">25</div>
+                                  <div class="delta"><span class="arrow dn"></span><span class="delta-value">-62.69%</span>
+                                  </div>
+                                  <div class="prev"><span prev-label="">Prev</span><span>67</span></div>
+                                </div>
+                              </td>
+                              <td width="25%" bgcolor="#ffffff">
+                                <div class="metric">
+                                  <h5>Facet Search Value</h5>
+                                  <div class="current">$567.73</div>
+                                  <div class="delta"><span class="arrow dn"></span><span class="delta-value">-76.16%</span>
+                                  </div>
+                                  <div class="prev"><span prev-label="">Prev</span><span>$2,381.03</span></div>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="query-report" colspan="2">
+                  <h4>Add to Cart</h4>
+                  <h6>
+                     Add to Cart vs Day for all devices<br/><small><span class="prev-legend"></span>Previous
+                      &nbsp;<span class="cur-legend"></span>Current</small></h6>
+                  <div class="barchart">
+                    <div class="barchart-inner">
+                      <table class="barchart-table" height="100%" width="100%">
+                        <tbody>
+                          <tr height="230px">
+                            <td width="7.5%" height="100%">
+                              <div class="barchart-y-label" style="height: 25%;">700</div>
+                              <div class="barchart-y-label" style="height: 25%;">600</div>
+                              <div class="barchart-y-label" style="height: 25%;">500</div>
+                              <div class="barchart-y-label" style="height: 25%;">400</div>
+                              <div class="barchart-y-label">300</div>
+                            </td>
+                            <td width="92.5%">
+                              <div class="barchart-area">
+                                <table width="100%" height="100%">
+                                  <tbody>
+                                    <tr height="100%">
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 10.5%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 70.75%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 35%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 61.75%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 69.75%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 47.5%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 50%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 66.75%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 80.75%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 52%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 67.75%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 64.5%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 78.75%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 39.5%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr height="14px">
+                            <td width="7.5%"></td>
+                            <td width="92.5%">
+                              <table width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td width="14.2%" align="center">07 JAN</td>
+                                    <td width="14.2%" align="center">08 JAN</td>
+                                    <td width="14.2%" align="center">09 JAN</td>
+                                    <td width="14.2%" align="center">10 JAN</td>
+                                    <td width="14.2%" align="center">11 JAN</td>
+                                    <td width="14.2%" align="center">12 JAN</td>
+                                    <td width="14.2%" align="center">13 JAN</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="query-report" colspan="2">
+                  <h4>Search Traffic</h4>
+                  <h6>
+                     Searches vs Day for all devices<br/><small><span class="prev-legend"></span>Previous
+                      &nbsp;<span class="cur-legend"></span>Current</small></h6>
+                  <div class="barchart">
+                    <div class="barchart-inner">
+                      <table class="barchart-table" height="100%" width="100%">
+                        <tbody>
+                          <tr height="230px">
+                            <td width="7.5%" height="100%">
+                              <div class="barchart-y-label" style="height: 25%;">9000</div>
+                              <div class="barchart-y-label" style="height: 25%;">8250</div>
+                              <div class="barchart-y-label" style="height: 25%;">7500</div>
+                              <div class="barchart-y-label" style="height: 25%;">6750</div>
+                              <div class="barchart-y-label">300</div>
+                            </td>
+                            <td width="92.5%">
+                              <div class="barchart-area">
+                                <table width="100%" height="100%">
+                                  <tbody>
+                                    <tr height="100%">
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 26.2%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 38.4%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 41.96666666666667%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 0.4666666666666667%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 73%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 1.3333333333333333%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 73.2%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 32.733333333333334%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 68.46666666666667%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 43.93333333333333%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 50.53333333333333%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 31.533333333333335%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 17.933333333333334%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 9.066666666666666%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr height="14px">
+                            <td width="7.5%"></td>
+                            <td width="87.5%">
+                              <table width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td width="14.2%" align="center">07 JAN</td>
+                                    <td width="14.2%" align="center">08 JAN</td>
+                                    <td width="14.2%" align="center">09 JAN</td>
+                                    <td width="14.2%" align="center">10 JAN</td>
+                                    <td width="14.2%" align="center">11 JAN</td>
+                                    <td width="14.2%" align="center">12 JAN</td>
+                                    <td width="14.2%" align="center">13 JAN</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <h6 style="margin-top: 32px;">Visitors vs Day for all devices<br/><small><span class="prev-legend"></span>Previous
+                      &nbsp;<span class="cur-legend"></span>Current</small></h6>
+                  <div class="barchart">
+                    <div class="barchart-inner">
+                      <table class="barchart-table" height="100%" width="100%">
+                        <tbody>
+                          <tr height="230px">
+                            <td width="7.5%" height="100%">
+                              <div class="barchart-y-label" style="height: 25%;">20000</div>
+                              <div class="barchart-y-label" style="height: 25%;">15000</div>
+                              <div class="barchart-y-label" style="height: 25%;">10000</div>
+                              <div class="barchart-y-label" style="height: 25%;">5000</div>
+                              <div class="barchart-y-label">300</div>
+                            </td>
+                            <td width="92.5%">
+                              <div class="barchart-area">
+                                <table width="100%" height="100%">
+                                  <tbody>
+                                    <tr height="100%">
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 52.39%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 60.53%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 56.375%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 63.645%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 64.82%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 61.935%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 66.125%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 68.685%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 64.745%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 60.675%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 65.945%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 57.185%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 48.995%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 47.185%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr height="14px">
+                            <td width="7.5%"></td>
+                            <td width="92.5%">
+                              <table width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td width="14.2%" align="center">07 JAN</td>
+                                    <td width="14.2%" align="center">08 JAN</td>
+                                    <td width="14.2%" align="center">09 JAN</td>
+                                    <td width="14.2%" align="center">10 JAN</td>
+                                    <td width="14.2%" align="center">11 JAN</td>
+                                    <td width="14.2%" align="center">12 JAN</td>
+                                    <td width="14.2%" align="center">13 JAN</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="query-report" colspan="2">
+                  <h4>Search Value</h4>
+                  <h6>Total Search Value vs Day for all devices<br/><small><span class="prev-legend"></span>Previous
+                      &nbsp;<span class="cur-legend"></span>Current</small></h6>
+                  <div class="barchart">
+                    <div class="barchart-inner">
+                      <table class="barchart-table" height="100%" width="100%">
+                        <tbody>
+                          <tr height="230px">
+                            <td width="7.5%" height="100%">
+                              <div class="barchart-y-label" style="height: 25%;">20000</div>
+                              <div class="barchart-y-label" style="height: 25%;">17500</div>
+                              <div class="barchart-y-label" style="height: 25%;">15000</div>
+                              <div class="barchart-y-label" style="height: 25%;">12500</div>
+                              <div class="barchart-y-label">10000</div>
+                            </td>
+                            <td width="92.5%">
+                              <div class="barchart-area">
+                                <table width="100%" height="100%">
+                                  <tbody>
+                                    <tr height="100%">
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 3.5548010730743407%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 75.47710145950317%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 34.869901337623595%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 60.72210170030594%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 82.94480137825012%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 41.29550104141235%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 59.10960107803345%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 63.11070103645325%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 76.06570142745971%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 46.97300101280212%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 67.40380129814147%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 60.51820135116577%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 64.6237012887001%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 68.74880102157593%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr height="14px">
+                            <td width="7.5%"></td>
+                            <td width="87.5%">
+                              <table width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td width="14.2%" align="center">07 JAN</td>
+                                    <td width="14.2%" align="center">08 JAN</td>
+                                    <td width="14.2%" align="center">09 JAN</td>
+                                    <td width="14.2%" align="center">10 JAN</td>
+                                    <td width="14.2%" align="center">11 JAN</td>
+                                    <td width="14.2%" align="center">12 JAN</td>
+                                    <td width="14.2%" align="center">13 JAN</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <h6 style="margin-top: 32px;">Value per Search vs Day for all devices<br/><small><span class="prev-legend"></span>Previous
+                      &nbsp;<span class="cur-legend"></span>Current</small></h6>
+                  <div class="barchart">
+                    <div class="barchart-inner">
+                      <table class="barchart-table" height="100%" width="100%">
+                        <tbody>
+                          <tr height="230px">
+                            <td width="7.5%" height="100%">
+                              <div class="barchart-y-label" style="height: 25%;">40</div>
+                              <div class="barchart-y-label" style="height: 25%;">35</div>
+                              <div class="barchart-y-label" style="height: 25%;">30</div>
+                              <div class="barchart-y-label" style="height: 25%;">25</div>
+                              <div class="barchart-y-label">20</div>
+                            </td>
+                            <td width="92.5%">
+                              <div class="barchart-area">
+                                <table width="100%" height="100%">
+                                  <tbody>
+                                    <tr height="100%">
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 51.39590800157068%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 50.494941217412666%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 53.26125152002682%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 46.91234159077325%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 57.9834208793179%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 44.17908269531873%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 59.109601078033435%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 43.83659703390938%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 41.30473629812176%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 44.658465563781625%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 46.58826733637607%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 43.83351375552488%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                      <td width="14.2%">
+                                        <table width="100%" height="100%" cellspacing="4">
+                                          <tr>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-prev" style="height: 33.840407551788694%;"></div>
+                                            </td>
+                                            <td valign="bottom" width="50%">
+                                              <div class="barchart-day-cur" style="height: 84.22358190128378%;"></div>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr height="14px">
+                            <td width="7.5%"></td>
+                            <td width="92.5%">
+                              <table width="100%">
+                                <tbody>
+                                  <tr>
+                                    <td width="14.2%" align="center">07 JAN</td>
+                                    <td width="14.2%" align="center">08 JAN</td>
+                                    <td width="14.2%" align="center">09 JAN</td>
+                                    <td width="14.2%" align="center">10 JAN</td>
+                                    <td width="14.2%" align="center">11 JAN</td>
+                                    <td width="14.2%" align="center">12 JAN</td>
+                                    <td width="14.2%" align="center">13 JAN</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td class="more" colspan="2">
+                  <h4>Want more?</h4>
+                  <p><a href="https://prod.readings.srchy.ai/admin?period=14" rel="external">14 day view</a><strong>&nbsp;|&nbsp;</strong><a href="https://prod.readings.srchy.ai/admin?period=21" rel="external">21 day view</a><strong>&nbsp;|&nbsp;</strong><a href="https://prod.readings.srchy.ai/admin?period=30" rel="external">30 day view</a></p>
+                </td>
+              </tr>
+              <tr>
+                <td class="footer" colspan="2"><a href="https://srchy.ai" title="Srchy website"><img src="https://srchy.ai/assets/srchy-icon-65x62.png" width="32.5px" height="31px" alt="Srchy logo"/></a>
+                  <p>Src Search Pty Ltd</p>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
